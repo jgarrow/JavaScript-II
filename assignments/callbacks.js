@@ -44,20 +44,57 @@ function getLength(arr, cb) {
   return cb(arr.length);
 }
 
+function arrLength(num) {
+  return num;
+}
+
+const itemsLength = getLength(items, arrLength);
+console.log('\nChallenge 1:');
+console.log(itemsLength);
+
+
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1]);
 }
 
+function lastItem(element) {
+  return element;
+}
+
+const myLast = last(items, lastItem);
+console.log('\nChallenge 2:');
+console.log(myLast);
+
+
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return cb((x + y));
+  return cb(x + y);
 }
+
+function sum(num) {
+  return num;
+}
+
+const mySum = sumNums(12, 2, sum);
+console.log('\nChallenge 3:');
+console.log(mySum);
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   return cb((x * y));
 }
+
+function multiply(num) {
+  return num;
+}
+
+const myMultiple = multiplyNums(3, 4, multiply);
+console.log('\nChallenge 4:');
+console.log(myMultiple);
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
@@ -65,7 +102,18 @@ function contains(item, list, cb) {
   return cb(list.includes(item));
 }
 
+function doesItInclude(bool) {
+  return bool;
+}
+
+const isIncluded = contains('Highlighter', items, doesItInclude);
+
+console.log('\nChallenge 5:');
+console.log(isIncluded);
+
 /* STRETCH PROBLEM */
+
+const items2 = ['Pencil', 'Notebook', 'Notebook', 'yo-yo', 'Gum', 'Pencil'];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
@@ -74,3 +122,13 @@ function removeDuplicates(array, cb) {
   return cb(array.filter((item, index) => array.indexOf(item)=== index));
 }
 
+function arrNoDuplicates(arr) {
+  return arr;
+}
+
+const myNewArr = removeDuplicates(items2, arrNoDuplicates);
+console.log('\nStretch Goal:\n');
+console.log('Duplicates removed:\t');
+console.log(myNewArr);
+console.log('Original array:\t');
+console.log(items2);
